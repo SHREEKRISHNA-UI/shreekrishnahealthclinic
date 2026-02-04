@@ -44,8 +44,8 @@ export default function Home() {
             Prepare with our comprehensive mock tests. Get ready for your exams with detailed analytics and instant feedback.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="btn-primary bg-white text-indigo-600 hover:bg-gray-100">Get Started</button>
-            <button className="px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:bg-opacity-10 transition font-medium">
+            <button className="btn-primary bg-white text-indigo-600 hover:bg-gray-100" aria-label="Get started with mock tests">Get Started</button>
+            <button className="px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:bg-opacity-10 transition font-medium" aria-label="Learn more about our mock tests">
               Learn More
             </button>
           </div>
@@ -83,8 +83,10 @@ export default function Home() {
               />
             </div>
             <div className="flex items-center space-x-2">
-              <Filter size={20} className="text-gray-600" />
+              <label htmlFor="category-filter" className="sr-only">Filter by category</label>
+              <Filter size={20} className="text-gray-600" aria-hidden="true" />
               <select
+                id="category-filter"
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
@@ -120,6 +122,7 @@ export default function Home() {
                 setSelectedCategory('all')
               }}
               className="btn-primary"
+              aria-label="Clear all search filters to show all tests"
             >
               Clear Filters
             </button>
@@ -133,7 +136,7 @@ export default function Home() {
         <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
           Start with our most popular test and see how well you perform. Get instant feedback and detailed analysis.
         </p>
-        <button className="btn-primary bg-white text-blue-600 hover:bg-gray-100">
+        <button className="btn-primary bg-white text-blue-600 hover:bg-gray-100" aria-label="Start your first mock test now">
           Take Your First Test
         </button>
       </section>
